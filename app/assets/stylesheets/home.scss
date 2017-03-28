@@ -10,34 +10,3 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-/* sticky header */
-#header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    float: left;
-    background-color: gray;
-    font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-}
-#header ul {
-    list-style-type: none;
-    position: relative;
-    padding: 10px 0px 10px 0px;
-}
-#header li {
-    display: inline-block
-}
-#header a {
-    text-align: center;
-    display: block;
-    width: 125px;
-    color: white;
-    text-decoration: none;
-}
-#header a:hover {
-    color: black;
-}

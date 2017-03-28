@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    
     <body>
         <div>
-            <div id="header">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Search</a></li>
-                    <li><a href="#">Add Recipe</a></li>
-                    <li><a href="#">Log In</a></li>
-                    <li><a href="#">Register</a></li>
-                </ul>
+            <nav class="nav navbar-inverse">
+                <div class="container-fluid">
+                    <div>
+                        <a class="navbar-brand" href="#">recipe</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Search</a></li>
+                        <li><a href="#">Add Recipe</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    </ul>
+                </div>
+            </nav>
+                
+            <div class="container">
+                <h2>Featured Recipe</h2>
             </div>
         </div>
     </body>
