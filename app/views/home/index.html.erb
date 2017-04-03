@@ -14,9 +14,9 @@
                     <a class="navbar-brand" href="#">recipe</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
+                    <li><%= link_to 'Home', controller: 'home' %></li>
                     <li><a href="#">Search</a></li>
-                    <li><a href="#">Add Recipe</a></li>
+                    <li><%= link_to 'Add Recipe', controller: 'recipe' %></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-static-top">
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
