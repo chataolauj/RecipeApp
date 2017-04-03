@@ -1,4 +1,27 @@
-// Place all the styles related to the Recipe controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+    height: 100%;
+    width: 100%;
+}
 
+body {
+    margin: 0;
+    padding-top: 50px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: black;
+    
+    p {
+        color: white;
+    	text-align: center;
+        margin: 15px;
+    }
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
