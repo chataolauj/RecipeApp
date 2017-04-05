@@ -1,4 +1,3 @@
-<!-- Recipe controller index -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,19 +26,22 @@
         </nav>
         
         <div class="content container">
-            <% @recipe.each do |recipe| %>
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img src="" alt="" />
-                            <div class="caption">
-                                <h4><%= link_to recipe.recipe_name, recipe_path(recipe) %></h4>
-                                <p><%= recipe.description %></p>
-                            </div>
-                        </div>
-                    </div>
+            <h1><strong><%= @recipe.recipe_name %></strong></h1>
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <img src="" alt="+Add Photo" />
                 </div>
-            <% end %>
+                <div class="col-xs-6 col-md-4">
+                    <p><strong>By:</strong> <%= @recipe.author %></p>
+                    <p><strong>Serves:</strong> <%= @recipe.servings %></p>
+                    <p><strong>Prep Time:</strong> <%= @recipe.prep_time %> minutes</p>
+                    <p><strong>Cook Time:</strong> <%= @recipe.cook_time %> minutes</p>
+                </div>
+            </div>
+            
+            <p><strong>Description:</strong> <br> <%= @recipe.description %></p>
+            <p><strong>Ingredients:</strong> <br> <%= @recipe.ingredients %></p>
+            <p><strong>Directions:</strong> <br> <%= @recipe.directions %></p>
         </div>
         
         <footer>
