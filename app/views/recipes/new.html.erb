@@ -15,7 +15,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li><%= link_to 'Home', controller: 'home' %></li>
-                    <li><%= link_to 'Browse Recipes', controller: 'recipe' %></li>
+                    <li><%= link_to 'Browse Recipes', controller: 'recipes' %></li>
                     <li><%= link_to 'Add Recipe', new_recipe_path %></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-static-top">
@@ -26,22 +26,25 @@
         </nav>
         
         <div class="content container">
-            <h1><strong><%= @recipe.recipe_name %></strong></h1>
             <div class="row">
                 <div class="col-xs-12 col-md-8">
                     <img src="" alt="+Add Photo" />
                 </div>
                 <div class="col-xs-6 col-md-4">
-                    <p><strong>By:</strong> <%= @recipe.author %></p>
-                    <p><strong>Serves:</strong> <%= @recipe.servings %></p>
-                    <p><strong>Prep Time:</strong> <%= @recipe.prep_time %> minutes</p>
-                    <p><strong>Cook Time:</strong> <%= @recipe.cook_time %> minutes</p>
+                    <%= form_for :recipe, url: recipes_path do |f| %>
+                    <p><%= f.label 'Author:' %> <%= f.text_field :author %></p>
+                    <p><%= f.label 'Serves:' %> <%= f.text_field :servings %><p>
+                    <p><%= f.label 'Prep Time (minutes):' %> <%= f.text_field :prep_time %></p>
+                    <p><%= f.label 'Cook Time (minutes):' %> <%= f.text_field :cook_time %></p>
                 </div>
             </div>
             
-            <p><strong>Description:</strong> <br> <%= @recipe.description %></p>
-            <p><strong>Ingredients:</strong> <br> <%= @recipe.ingredients %></p>
-            <p><strong>Directions:</strong> <br> <%= @recipe.directions %></p>
+            <p><%= f.label 'Recipe Name:' %> <br> <%= f.text_field :recipe_name %></p>
+            <p><%= f.label 'Description:' %> <br> <%= f.text_area :description %></p>
+            <p><%= f.label 'Ingredients:' %> <br> <%= f.text_area :ingredients %></p>
+            <p><%= f.label 'Directions:' %> <br> <%= f.text_area :directions %></p>
+            <p><%= f.submit 'Submit', :class => "btn btn-primary" %></p> 
+            <% end %>
         </div>
         
         <footer>
