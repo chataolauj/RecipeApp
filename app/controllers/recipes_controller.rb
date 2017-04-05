@@ -1,18 +1,18 @@
 class RecipesController < ApplicationController
     def index
-        @recipe = Recipes.all
+        @recipe = Recipe.all
     end
     
     def show
-        @recipe = Recipes.find(params[:id])
+        @recipe = Recipe.find(params[:id])
     end
     
     def new
-        @recipe = Recipes.new
+        @recipe = Recipe.new
     end
     
     def create
-        @recipe = Recipes.new(recipe_params)
+        @recipe = Recipe.new(recipe_params)
         
         if @recipe.save
             redirect_to @recipe
