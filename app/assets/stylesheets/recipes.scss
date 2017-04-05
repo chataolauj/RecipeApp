@@ -1,3 +1,4 @@
+/*  general html view layout */
 html {
     height: 100%;
     width: 100%;
@@ -26,6 +27,7 @@ footer {
     padding: 20px;
 }
 
+/* styling for forms */
 input[type=text] {
     width: 100%;
     padding: 12px 12px;
@@ -38,4 +40,14 @@ textarea {
     padding: 12px 12px;
     border: 2px solid #ccc;
     resize: none;
+}
+
+/* show view styling  */
+.show-text-formatting {
+    p {
+        padding-bottom: 20px;
+    }
+    h4 {
+        margin-bottom: 0;
+    }
 }
