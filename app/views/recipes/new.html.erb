@@ -30,19 +30,8 @@
                 <div class="col-xs-12 col-md-8">
                     <img src="" alt="+Add Photo" />
                 </div>
-                <%= form_for @recipe do |f| %>
-                    <div class="col-xs-6 col-md-4">
-                        <p><%= f.label 'Author:' %> <%= f.text_field :author %></p>
-                        <p><%= f.label 'Serves:' %> <%= f.text_field :servings %><p>
-                        <p><%= f.label 'Prep Time (minutes):' %> <%= f.text_field :prep_time %></p>
-                        <p><%= f.label 'Cook Time (minutes):' %> <%= f.text_field :cook_time %></p>
-                    </div>
-                    <p><%= f.label 'Recipe Name:' %> <br> <%= f.text_field :recipe_name %></p>
-                    <p><%= f.label 'Description:' %> <br> <%= f.text_area :description %></p>
-                    <p><%= f.label 'Ingredients:' %> <br> <%= f.text_area :ingredients %></p>
-                    <p><%= f.label 'Directions:' %> <br> <%= f.text_area :directions %></p>
-                    <p><%= f.submit 'Submit', :class => "btn btn-primary" %></p> 
-                <% end %>
+                <%= render 'form' %>
+                <%= link_to 'Cancel', recipes_path, data: {confirm: 'Are you sure?' }, :class => "btn btn-danger" %> <!-- goes to 'Browse Recipes' page -->
             </div>
         </div>
         
