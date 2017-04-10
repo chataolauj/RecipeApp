@@ -43,6 +43,22 @@
                 <h4><strong>Ingredients:</strong></h4> <br> <p><%= @recipe.ingredients %></p>
                 <h4><strong>Directions:</strong></h4> <br> <p><%= @recipe.directions %></p>
             </div>
+            
+            <h2>Comments</h2>
+            <%= form_for([@recipe, @recipe.comments.build]) do |f| %>
+                <p><%= f.label 'Name' %> <br> <%= f.text_field :name %></p>
+                <p><%= f.label 'Comment' %> <br> <%= f.text_area :comment %></p>
+                <p><%= f.submit %></p>
+            <% end %>
+            
+            <% @recipe.comments.each do |comment| %>
+                <!-- displays commenter -->
+                <p><strong><%= comment.name %></strong></p>
+                
+                <!-- displays comment -->
+                <p><%= comment.comment %></p>
+            <% end %>
+            
             <div class="text-center">
                 <%= link_to 'Edit', edit_recipe_path, :class => "btn btn-info" %>
                 <%= link_to 'Delete', recipe_path, method: :delete, data: {confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
