@@ -1,4 +1,8 @@
 <%= form_for @recipe do |f| %>
+    <div class="col-xs-12 col-md-8">
+        <%= image_tag @recipe.image.thumb('600x400').url if @recipe.image_stored? %>
+        <%= f.file_field :image %>
+    </div>
     <div class="col-xs-6 col-md-4">
         <p><%= f.label 'Author:' %> <%= f.text_field :author %></p>
         <p><%= f.label 'Serves:' %> <%= f.text_field :servings %><p>
@@ -7,8 +11,8 @@
     </div>
     <p><%= f.label 'Recipe Name:' %> <br> <%= f.text_field :recipe_name %></p>
     <p><%= f.label 'Description:' %> <br> <%= f.text_area :description %></p>
-    <p><%= f.label 'Ingredients:' %> <br> <%= f.text_area :ingredients %></p>
-    <p><%= f.label 'Directions:' %> <br> <%= f.text_area :directions %></p>
+    <p><%= f.label 'Ingredients:' %> <br> <%= f.text_area :ingredients, placeholder: 'Put each ingredient on its own line.' %></p>
+    <p><%= f.label 'Directions:' %> <br> <%= f.text_area :directions, placeholder: 'Put each step on its own line.' %></p>
     <div class="text-center">
         <p><%= f.submit 'Submit', :class => "btn btn-primary" %></p>
         <%= link_to 'Cancel', @recipe, data: {confirm: 'Are you sure?' }, :class => "btn btn-danger" %> <!-- goes back to recipe object's view -->

@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 #renames rails application and it's corresponding files
 gem 'rename'
+#dragonfly gem that lets you upload files
+gem 'dragonfly', '~> 1.1.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
