@@ -7,23 +7,7 @@
     </head>
     
     <body>
-        <!-- navigation bar -->
-        <nav class="nav navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div>
-                    <a class="navbar-brand" href="#">recipe</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><%= link_to 'Home', controller: 'home' %></li>
-                    <li><%= link_to 'Browse Recipes', recipes_path %></li>
-                    <li><%= link_to 'Add Recipe', new_recipe_path %></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right navbar-static-top">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-                </ul>
-            </div>
-        </nav>
+        <%= render 'navbar' %>
         
         <div class="content container">
             <div class="row">
