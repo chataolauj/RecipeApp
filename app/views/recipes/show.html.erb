@@ -19,33 +19,50 @@
                 <div class="col-xs-12 col-md-8">
                     <%= image_tag @recipe.image.thumb('770x700').url if @recipe.image_stored? %>
                 </div>
-                <div class="col-xs-6 col-md-4">
+                <div class="col-xs-6 col-md-4 caption">
                     <p><strong>By:</strong> <%= @recipe.author %></p>
                     <p><strong>Serves:</strong> <%= @recipe.servings %></p>
                     <p><strong>Prep Time:</strong> <%= @recipe.prep_time %> minutes</p>
-                    <p><strong>Cook Time:</strong> <%= @recipe.cook_time %> minutes</p>
+                    <p><strong>Cook Time:</strong> <%= @recipe.cook_time %> minutes</p> <br>
+                    <div class="">
+                        <h4><strong>Description:</strong></h4> <br> <p><%= @recipe.description %></p>
+                    </div>
                 </div>
             </div>
             <div class="show-text-formatting">
-                <h4><strong>Description:</strong></h4> <br> <p><%= @recipe.description %></p>
-                <h4><strong>Ingredients:</strong></h4> <br> <p><%= @recipe.ingredients %></p>
-                <h4><strong>Directions:</strong></h4> <br> <p><%= @recipe.directions %></p>
+                <div class="col-xs-6 col-md-4">
+                    <h4><strong>Ingredients:</strong></h4> <br>
+                    <ul>
+                        <% @recipe.ingredients.each_line do |line| %>
+                            <li><%= line.chomp %></li>
+                        <% end %>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <h4><strong>Directions:</strong></h4> <br>
+                    <ol>
+                        <% @recipe.directions.each_line do |line| %>
+                            <li><%= line.chomp %></li>
+                        <% end %>
+                    </ol>
+                </div>
             </div>
-            
-            <h2>Comments</h2>
-            <%= form_for([@recipe, @recipe.comments.build]) do |f| %>
-                <p><%= f.label 'Name' %> <br> <%= f.text_field :name %></p>
-                <p><%= f.label 'Comment' %> <br> <%= f.text_area :comment %></p>
-                <p><%= f.submit %></p>
-            <% end %>
-            
-            <% @recipe.comments.each do |comment| %>
-                <!-- displays commenter -->
-                <p><strong><%= comment.name %></strong></p>
+            <div class="col-md-12">
+                <h2>Comments</h2>
+                <%= form_for([@recipe, @recipe.comments.build]) do |f| %>
+                    <p><%= f.label 'Name' %> <br> <%= f.text_field :name %></p>
+                    <p><%= f.label 'Comment' %> <br> <%= f.text_area :comment %></p>
+                    <p><%= f.submit 'Post' %></p>
+                <% end %>
                 
-                <!-- displays comment -->
-                <p><%= comment.comment %></p>
-            <% end %>
+                <% @recipe.comments.each do |comment| %>
+                    <!-- displays commenter -->
+                    <p><strong><%= comment.name %></strong></p>
+                    
+                    <!-- displays comment -->
+                    <p><%= comment.comment %></p>
+                <% end %>
+            </div>
         </div>
         <footer>
             <p>&copy Copyright 2017 Team Unicorn, All Rights Reserved</p>
