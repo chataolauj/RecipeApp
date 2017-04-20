@@ -17,6 +17,6 @@
     <p><%= f.label :directions, 'Directions' %> <br> <%= f.text_area :directions, placeholder: 'Put each step on its own line.' %></p>
     <div class="text-center">
         <p><%= f.submit 'Submit', :class => "btn btn-primary" %></p>
-        <%= link_to 'Cancel', @recipe, data: {confirm: 'Are you sure?' }, :class => "btn btn-danger" %> <!-- goes back to recipe object's view -->
+        <%= link_to 'Cancel', @recipe, data: {confirm: 'Are you sure?' }, class: "btn btn-danger" %> <!-- goes back to recipe object's view -->
     </div>
 <% end %>

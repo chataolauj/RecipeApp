@@ -5,8 +5,15 @@ class CommentsController < ApplicationController
         redirect_to recipe_path(@recipe) #redirects back to the page with the article and new comments
     end
     
-    private
-        def comments_params
-            params.require(:comment).permit(:name, :comment, :rating)
-        end
+    def destroy
+       @recipe = Recipe.find(params[:recipe_id]) #finds current recipe
+       @comment = @recipe.comments.find(params[:id]) #locates comment within the @artciles
+       @comment.destroy #removes comment from database
+       redirect_to recipe_path(@recipe) #redirects to the recipe
+    end
 end
+
+private
+    def comments_params
+        params.require(:comment).permit(:name, :comment, :rating)
+    end
