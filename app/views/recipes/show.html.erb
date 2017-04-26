@@ -1,60 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    
-    <body>
-        <!-- navigation bar -->
-        <%= render 'navbar' %>
-        
-        <div class="content container">
-            <h1><strong><%= @recipe.recipe_name %></strong>
-                <%= link_to 'Edit', edit_recipe_path, :class => "btn btn-info btn-xs" %>
-                <%= link_to 'Delete', recipe_path, method: :delete, data: {confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %>
-            </h1>
-            <div class="row">
-                <div class="col-sm-6 col-md-6">
-                    <%= image_tag @recipe.image.thumb('575x600').url if @recipe.image_stored? %>
-                </div>
-                <div class="col-sm-5 col-md-4">
-                    <p><strong>By:</strong> <%= @recipe.author %></p>
-                    <p><strong>Serves:</strong> <%= @recipe.servings %></p>
-                    <p><strong>Prep Time:</strong> <%= @recipe.prep_time %> minutes</p>
-                    <p><strong>Cook Time:</strong> <%= @recipe.cook_time %> minutes</p> <br>
-                    <div class="">
-                        <h4><strong>Description:</strong></h4> <p><%= @recipe.description %></p>
-                    </div>
-                </div>
-            </div>
-            <div class="show-text-formatting">
-                <div class="col-sm-4 col-md-4">
-                    <h4><strong>Ingredients:</strong></h4> <br>
-                    <ul>
-                        <% @recipe.ingredients.each_line do |line| %>
-                            <li><%= line.chomp %></li>
-                        <% end %>
-                    </ul>
-                </div>
-                <div class="col-xs-8">
-                    <h4><strong>Directions:</strong></h4> <br>
-                    <ol>
-                        <% @recipe.directions.each_line do |line| %>
-                            <li><%= line.chomp %></li> <br>
-                        <% end %>
-                    </ol>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <h2>Comments</h2>
-                <%= render 'comments/form' %>
-                <%= render @recipe.comments %>
-            </div>
+<h1><strong><%= @recipe.recipe_name %></strong>
+    <%= link_to 'Edit', edit_recipe_path, :class => "btn btn-info btn-xs" %>
+    <%= link_to 'Delete', recipe_path, method: :delete, data: {confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %>
+</h1>
+<div class="row">
+    <div class="col-sm-6 col-md-6">
+        <%= image_tag @recipe.image.thumb('575x600').url if @recipe.image_stored? %>
+    </div>
+    <div class="col-sm-5 col-md-4">
+        <p><strong>By:</strong> <%= @recipe.author %></p>
+        <p><strong>Serves:</strong> <%= @recipe.servings %></p>
+        <p><strong>Prep Time:</strong> <%= @recipe.prep_time %> minutes</p>
+        <p><strong>Cook Time:</strong> <%= @recipe.cook_time %> minutes</p> <br>
+        <div class="">
+            <h4><strong>Description:</strong></h4> <p><%= @recipe.description %></p>
         </div>
-        <footer>
-            <p>&copy Copyright 2017 Team Unicorn, All Rights Reserved</p>
-        </footer>
-    </body>
-</html>
+    </div>
+</div>
+<div class="show-text-formatting">
+    <div class="col-sm-4 col-md-4">
+        <h4><strong>Ingredients:</strong></h4> <br>
+        <ul>
+            <% @recipe.ingredients.each_line do |line| %>
+                <li><%= line.chomp %></li>
+            <% end %>
+        </ul>
+    </div>
+    <div class="col-xs-8">
+        <h4><strong>Directions:</strong></h4> <br>
+        <ol>
+            <% @recipe.directions.each_line do |line| %>
+                <li><%= line.chomp %></li> <br>
+            <% end %>
+        </ol>
+    </div>
+</div>
+<div class="col-md-12">
+    <h2>Comments</h2>
+    <%= render 'comments/form' %>
+    <%= render @recipe.comments %>
+</div>

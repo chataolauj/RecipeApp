@@ -1,33 +1,13 @@
-<!-- Recipe controller index -->
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    
-    <body>
-        <%= render 'navbar' %>
-        
-        <div class="content container">
-                <div class="row">
-                    <% @recipe.each do |recipe| %>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <%= link_to (image_tag recipe.image.thumb('350x300').url), recipe_path(recipe) if recipe.image_stored?  %>
-                                <div class="caption">
-                                    <h4><%= link_to recipe.recipe_name, recipe_path(recipe) %></h4>
-                                    <p><%= recipe.description %></p>
-                                </div>
-                            </div>
-                        </div>
-                    <% end %>
+<div class="row">
+    <% @recipe.each do |recipe| %>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <%= link_to (image_tag recipe.image.thumb('350x300').url), recipe_path(recipe) if recipe.image_stored?  %>
+                <div class="caption">
+                    <h4><%= link_to recipe.recipe_name, recipe_path(recipe) %></h4>
+                    <p><%= recipe.description %></p>
                 </div>
+            </div>
         </div>
-        
-        <footer>
-            <p>&copy Copyright 2017 Team Unicorn, All Rights Reserved</p>
-        </footer>
-    </body>
-</html>
+    <% end %>
+</div>

@@ -1,31 +1,3 @@
-/* html formatting */
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding-top: 50px;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    background-color: black;
-    
-    p {
-        color: gray;
-    	text-align: center;
-        margin: 15px;
-    }
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
-}
-
 /* styles for views */
 input[type=text] {
     width: 100%;

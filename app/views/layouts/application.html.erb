@@ -9,6 +9,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/nav' %>
+    
+    <div class="content container">
+      <span class="notice"><%= notice %></span>
+      <span class="alert"><%= alert %></span>
+      <%= yield %>
+    </div>
+    
+    <footer>
+      <p>&copy Copyright 2017 Team Unicorn, All Rights Reserved</p>
+    </footer>
   </body>
 </html>

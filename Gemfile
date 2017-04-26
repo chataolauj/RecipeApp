@@ -24,6 +24,11 @@ gem 'coffee-rails', '~> 4.2'
 gem 'rename'
 #dragonfly gem that lets you upload files
 gem 'dragonfly', '~> 1.1.1'
+#devise gem for user authentication
+gem 'devise'
+#bootstrap gem
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'autoprefixer-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,0 +1,17 @@
+<!-- navigation bar for guests -->
+<nav class="nav navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div>
+            <li><%= link_to 'recipe', root_path, class: "navbar-brand" %></li>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Browse Recipes', recipes_path %></li>
+            <li><%= link_to 'Add Recipe', new_user_session_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right navbar-static-top">
+            <li><%= link_to ' Login', new_user_session_path, class: "glyphicon glyphicon-log-in" %></li>
+            <li><%= link_to ' Register', new_user_registration_path, class: "glyphicon glyphicon-user" %></li>
+        </ul>
+    </div>
+</nav>
