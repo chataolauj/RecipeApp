@@ -2,12 +2,13 @@
     <%= link_to 'Edit', edit_recipe_path, :class => "btn btn-info btn-xs" %>
     <%= link_to 'Delete', recipe_path, method: :delete, data: {confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %>
 </h1>
+
 <div class="row">
     <div class="col-sm-6 col-md-6">
         <%= image_tag @recipe.image.thumb('575x600').url if @recipe.image_stored? %>
     </div>
     <div class="col-sm-5 col-md-4">
-        <p><strong>By:</strong> <%= @recipe.author %></p>
+        <p><strong>By:</strong> <%= current_user.username %></p>
         <p><strong>Serves:</strong> <%= @recipe.servings %></p>
         <p><strong>Prep Time:</strong> <%= @recipe.prep_time %> minutes</p>
         <p><strong>Cook Time:</strong> <%= @recipe.cook_time %> minutes</p> <br>
@@ -16,6 +17,7 @@
         </div>
     </div>
 </div>
+
 <div class="show-text-formatting">
     <div class="col-sm-4 col-md-4">
         <h4><strong>Ingredients:</strong></h4> <br>
@@ -34,6 +36,7 @@
         </ol>
     </div>
 </div>
+
 <div class="col-md-12">
     <h2>Comments</h2>
     <%= render 'comments/form' %>
