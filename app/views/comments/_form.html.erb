@@ -1,4 +1,5 @@
-<%= form_for([@recipe, @recipe.comments.build]) do |f| %>
-    <p><%= f.label 'Comment' %> <br> <%= f.text_area :comment %></p>
-    <p><%= f.submit 'Post' %></p>
+<% if !user_signed_in? %>
+    <%= render "comments/form_guest" %>
+<% else %>
+    <%= render "comments/form_user" %>
 <% end %>

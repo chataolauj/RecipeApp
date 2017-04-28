@@ -1,10 +1,13 @@
 class RecipesController < ApplicationController
+    before_action :set_recipe, only: [:show]
+    before_action :authenticate_user!, except: [:index, :show]
+    
     def index
         @recipe = Recipe.all
     end
     
     def show
-        @recipe = Recipe.find(params[:id])
+        
     end
     
     def new
@@ -22,12 +25,10 @@ class RecipesController < ApplicationController
     end
     
     def edit
-        @recipe = Recipe.find(params[:id])
+        
     end
     
     def update
-        @recipe = Recipe.find(params[:id])
-        
         if @recipe.update(recipe_params)
             redirect_to @recipe
         else
@@ -36,14 +37,18 @@ class RecipesController < ApplicationController
     end
     
     def destroy
-        @recipe = Recipe.find(params[:id])
         @recipe.destroy
         
         redirect_to recipes_path
     end
+    
+    private
+    
+        def set_recipe
+            @recipe = Recipe.find(params[:id])
+        end
+        
+        def recipe_params
+            params.require(:recipe).permit(:author, :servings, :prep_time, :cook_time, :recipe_name, :description, :ingredients, :directions, :image)
+        end
 end
-
-private
-    def recipe_params
-        params.require(:recipe).permit(:author, :servings, :prep_time, :cook_time, :recipe_name, :description, :ingredients, :directions, :image)
-    end

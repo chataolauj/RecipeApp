@@ -1,5 +1,5 @@
 <div class="show-text-formatting">
-    <p><strong><%= current_user.username %></strong></p>
+    <p><strong><%= comment.name %></strong></p>
     <p><%= comment.comment %></p>
     
     <%= link_to 'Delete', [comment.recipe, comment], method: :delete, data: { confirm: 'Are you sure want to delete this comment?' } %>
