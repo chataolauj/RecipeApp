@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
 
-feature 'User adds an article' do
+feature 'User adds an recipe' do
     scenario 'User sucessfully navigates to the Add Recipe page from Home page' do
         visit root_path
         expect(page).to have_content('Featured Recipes')
