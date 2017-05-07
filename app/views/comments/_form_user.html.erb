@@ -1,4 +1,4 @@
-<h2>Comments</h2>
+<h3><strong>Comments</strong></h3>
 <%= form_for([@recipe, @recipe.comments.build]) do |f| %>
     <p><%= f.text_area :comment %></p>
     <p><%= f.submit 'Post' %></p>
