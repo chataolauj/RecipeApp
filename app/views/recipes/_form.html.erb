@@ -6,16 +6,18 @@
         <%= f.file_field :image %>
     </div>
     <div class="col-xs-6 col-md-4">
-        <p><%= f.label :servings, 'Serves' %> <%= f.text_field :servings %><p>
-        <p><%= f.label :prep_time, 'Prep Time (minutes):' %> <%= f.text_field :prep_time %></p>
-        <p><%= f.label :cook_time, 'Cook Time (minutes):' %> <%= f.text_field :cook_time %></p>
+        <div class="form-group"><%= f.label :servings, 'Serves' %> <%= f.text_field :servings, class: "form-control" %></div>
+        <div class="form-group"><%= f.label :prep_time, 'Prep Time (minutes):' %> <%= f.text_field :prep_time, class: "form-control" %></div>
+        <div class="form-group"><%= f.label :cook_time, 'Cook Time (minutes):' %> <%= f.text_field :cook_time, class: "form-control" %></div>
     </div>
-    <p><%= f.label :recipe_name, 'Recipe Name' %> <br> <%= f.text_field :recipe_name %></p>
-    <p><%= f.label :description, 'Description' %> <br> <%= f.text_area :description %></p>
-    <p><%= f.label :ingredients, 'Ingredients' %> <br> <%= f.text_area :ingredients, placeholder: 'Put each ingredient on its own line.' %></p>
-    <p><%= f.label :directions, 'Directions' %> <br> <%= f.text_area :directions, placeholder: 'Put each step on its own line.' %></p>
-    <div class="text-center">
-        <p><%= f.submit 'Submit', :class => "btn btn-primary" %></p>
+    <div class="col-xs-12 col-md-12 form-group">
+        <div class="form-group"><%= f.label :recipe_name, 'Recipe Name' %> <br> <%= f.text_field :recipe_name, class: "form-control" %></div>
+        <div class="form-group"><%= f.label :description, 'Description' %> <br> <%= f.text_area :description, class: "form-control", rows: "10" %></div>
+        <div class="form-group"><%= f.label :ingredients, 'Ingredients' %> <br> <%= f.text_area :ingredients, placeholder: 'Put each ingredient on its own line.', class: "form-control", rows: "10" %></div>
+        <div class="form-group"><%= f.label :directions, 'Directions' %> <br> <%= f.text_area :directions, placeholder: 'Put each step on its own line.', rows: "10" %></div>
+    </div>
+    <div class="col-xs-12 col-md-12 text-center">
+        <%= f.submit 'Submit', :class => "btn btn-primary" %>
         <%= link_to 'Cancel', @recipe, data: {confirm: 'Are you sure?' }, class: "btn btn-danger" %> <!-- goes back to recipe object's view -->
     </div>
 <% end %>

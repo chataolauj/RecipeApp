@@ -29,6 +29,7 @@ gem 'devise'
 #bootstrap gem
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
+gem 'factory_girl_rails', '~> 4.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
