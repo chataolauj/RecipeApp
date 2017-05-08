@@ -14,7 +14,7 @@
         <div class="form-group"><%= f.label :recipe_name, 'Recipe Name' %> <br> <%= f.text_field :recipe_name, class: "form-control" %></div>
         <div class="form-group"><%= f.label :description, 'Description' %> <br> <%= f.text_area :description, class: "form-control", rows: "10" %></div>
         <div class="form-group"><%= f.label :ingredients, 'Ingredients' %> <br> <%= f.text_area :ingredients, placeholder: 'Put each ingredient on its own line.', class: "form-control", rows: "10" %></div>
-        <div class="form-group"><%= f.label :directions, 'Directions' %> <br> <%= f.text_area :directions, placeholder: 'Put each step on its own line.', rows: "10" %></div>
+        <div class="form-group"><%= f.label :directions, 'Directions' %> <br> <%= f.text_area :directions, placeholder: 'Put each step on its own line.', class: "form-control", rows: "10" %></div>
     </div>
     <div class="col-xs-12 col-md-12 text-center">
         <%= f.submit 'Submit', :class => "btn btn-primary" %>

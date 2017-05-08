@@ -30,6 +30,9 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 gem 'factory_girl_rails', '~> 4.0'
+gem 'masonry-rails', '~> 0.2.4'
+gem 'jquery-turbolinks', '~> 2.1'
+gem 'jquery-masonry-rails', '~> 4.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

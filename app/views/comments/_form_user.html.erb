@@ -1,5 +1,14 @@
-<h3><strong>Comments</strong></h3>
-<%= form_for([@recipe, @recipe.comments.build]) do |f| %>
-    <p><%= f.text_area :comment %></p>
-    <p><%= f.submit 'Post' %></p>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Comments</h3>
+  </div>
+  <div class="panel-body">
+        <%= form_for([@recipe, @recipe.comments.build]) do |f| %>
+            <div class="form-group">
+                <p><%= f.text_area :comment, class: "form-control", rows: "10" %></p>
+                <%= f.submit 'Post', class: "btn btn-info" %>
+            </div>
+        <% end %>
+        <%= render @recipe.comments.order(created_at: :DESC) %>
+    </div>
+</div>

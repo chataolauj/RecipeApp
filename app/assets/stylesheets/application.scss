@@ -1,7 +1,23 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require 'masonry/basic'
+*= require 'masonry/transitions'
+*= require_tree .
+*= require_self
+*/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "recipes.scss";
-@import "comments.scss";
 
 /* html formatting */
 html {
@@ -29,4 +45,26 @@ footer {
 .content {
     flex: 1;
     padding: 20px;
+}
+
+#recipes {
+    margin: 0 auto;
+    width: 100%;
+    
+    .box {
+        margin: 10px;
+        width: 321px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 3px 3px;
+        }
+    }
+}
+
+.panel-footer {
+    margin-bottom: 0 !important;
+    width: 100%;
 }
